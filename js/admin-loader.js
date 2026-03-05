@@ -154,7 +154,7 @@ function updateContacts(contacts) {
         }
     });
 
-    // ===== 9. VK (на случай если вернется) =====
+    // ===== 9. VK =====
     document.querySelectorAll('[data-dez-social="vk"]').forEach(el => {
         if (contacts.vk) {
             updateCount++;
@@ -307,5 +307,6 @@ window.DEZDataLoader = {
     applyData,
     forceRefreshContacts
 };
+
 
 console.log('✅ admin-loader.js загружен и готов к работе');
