@@ -763,59 +763,59 @@
     </div>
 
     <!-- Модальное окно заказа -->
-    <div class="modal" id="orderModal">
-        <div class="modal__content" style="max-width: 600px; width: 90%; padding: 40px;">
-            <button class="modal__close" aria-label="Закрыть">&times;</button>
-            <h3 class="modal__title" style="font-size: 2rem; margin-bottom: 10px; color: #0c8346;">Заявка на услугу</h3>
-            <p class="modal__text" style="font-size: 1.1rem; margin-bottom: 30px; color: #5a6268;">Мы перезвоним для уточнения деталей и согласования времени выезда</p>
+<div class="modal" id="orderModal">
+    <div class="modal__content" style="max-width: 600px; width: 90%; padding: 40px;">
+        <button class="modal__close" aria-label="Закрыть">&times;</button>
+        <h3 class="modal__title" style="font-size: 2rem; margin-bottom: 10px; color: #0c8346;">Вызов специалиста</h3>
+        <p class="modal__text" style="font-size: 1.1rem; margin-bottom: 30px; color: #5a6268;">Мы перезвоним для уточнения деталей и согласования времени выезда</p>
+        
+        <form id="orderForm" class="contact-form" style="display: flex; flex-direction: column; gap: 20px;">
+            <div class="form-group" style="width: 100%;">
+                <label for="orderName" style="font-weight: 600; margin-bottom: 8px; display: block; color: #333;">Ваше имя <span style="color: #ff0000;">*</span></label>
+                <input type="text" id="orderName" name="name" placeholder="Введите ваше имя" required 
+                       style="width: 100%; padding: 15px 18px; border: 2px solid #e0e0e0; border-radius: 8px; font-size: 1rem; transition: all 0.3s; box-sizing: border-box;">
+            </div>
             
-            <form id="orderForm" class="contact-form" style="display: flex; flex-direction: column; gap: 20px;">
-                <div class="form-group" style="width: 100%;">
-                    <label for="orderName" style="font-weight: 600; margin-bottom: 8px; display: block; color: #333;">Ваше имя <span style="color: #ff0000;">*</span></label>
-                    <input type="text" id="orderName" name="name" placeholder="Введите ваше имя" required 
-                           style="width: 100%; padding: 15px 18px; border: 2px solid #e0e0e0; border-radius: 8px; font-size: 1rem; transition: all 0.3s; box-sizing: border-box;">
-                </div>
-                
-                <div class="form-group" style="width: 100%;">
-                    <label for="orderPhone" style="font-weight: 600; margin-bottom: 8px; display: block; color: #333;">Номер телефона <span style="color: #ff0000;">*</span></label>
-                    <input type="tel" id="orderPhone" name="phone" placeholder="+7 (___) ___-__-__" required 
-                           style="width: 100%; padding: 15px 18px; border: 2px solid #e0e0e0; border-radius: 8px; font-size: 1rem; transition: all 0.3s; box-sizing: border-box;">
-                </div>
-                
-                <div class="form-group" style="width: 100%;">
-                    <label for="serviceInput" style="font-weight: 600; margin-bottom: 8px; display: block; color: #333;">Выбранная услуга</label>
-                    <input type="text" name="service" id="serviceInput" placeholder="Услуга будет указана автоматически" readonly
-                           style="width: 100%; padding: 15px 18px; border: 2px solid #e0e0e0; border-radius: 8px; font-size: 1rem; background-color: #f5f5f5; color: #333; box-sizing: border-box;">
-                </div>
-                
-                <div class="form-group" style="width: 100%;">
-                    <label for="orderAddress" style="font-weight: 600; margin-bottom: 8px; display: block; color: #333;">Адрес объекта <span style="color: #ff0000;">*</span></label>
-                    <textarea id="orderAddress" name="address" placeholder="Введите адрес: город, улица, дом, квартира" required rows="3"
-                              style="width: 100%; padding: 15px 18px; border: 2px solid #e0e0e0; border-radius: 8px; font-size: 1rem; transition: all 0.3s; font-family: inherit; resize: vertical; box-sizing: border-box;"></textarea>
-                </div>
-                
-                <!-- ЧЕКБОКС С ПАМЯТКОЙ -->
-                <div style="margin: 15px 0; padding: 20px; background-color: #0c8346; border-radius: 8px;">
-                    <label style="display: flex; align-items: flex-start; gap: 15px; cursor: pointer; color: #ffffff;">
-                        <input type="checkbox" name="clientMemoAgreement" id="clientMemoAgreement" required 
-                               style="width: 20px; height: 20px; margin-top: 2px; cursor: pointer; accent-color: #ff9800; flex-shrink: 0;">
-                        <span style="color: #ffffff; font-size: 1rem; line-height: 1.4; flex: 1;">
-                            Я ознакомлен(а) и согласен(на) с <a href="client-memo.html" target="_blank" style="color: #ff9800; text-decoration: underline; font-weight: 600;">Памяткой клиенту</a> и обязуюсь соблюдать все правила поведения после обработки
-                        </span>
-                    </label>
-                </div>
-                
-                <button type="submit" class="btn btn--primary btn--block" id="orderSubmitBtn" disabled style="padding: 16px; font-size: 1.2rem; font-weight: 700; background: #0c8346; color: white; border: none; border-radius: 8px; cursor: pointer; transition: all 0.3s; margin-top: 10px;">
-                    <i class="fas fa-phone-alt"></i> Вызвать специалиста
-                </button>
-                
-                <p class="form-note" style="font-size: 0.9rem; color: #5a6268; text-align: center; margin-top: 15px;">
-                    Нажимая кнопку, вы соглашаетесь с
-                    <button type="button" class="consent-link" data-modal="consent" style="background: none; border: none; color: #0c8346; text-decoration: underline; cursor: pointer; padding: 0; font-size: 0.9rem;">обработкой персональных данных</button>
-                </p>
-            </form>
-        </div>
+            <div class="form-group" style="width: 100%;">
+                <label for="orderPhone" style="font-weight: 600; margin-bottom: 8px; display: block; color: #333;">Номер телефона <span style="color: #ff0000;">*</span></label>
+                <input type="tel" id="orderPhone" name="phone" placeholder="+7 (___) ___-__-__" required 
+                       style="width: 100%; padding: 15px 18px; border: 2px solid #e0e0e0; border-radius: 8px; font-size: 1rem; transition: all 0.3s; box-sizing: border-box;">
+            </div>
+            
+            <div class="form-group" style="width: 100%;">
+                <label for="serviceInput" style="font-weight: 600; margin-bottom: 8px; display: block; color: #333;">Опишите ваш запрос</label>
+                <textarea name="service" id="serviceInput" placeholder="Опишите, какая услуга вам нужна, площадь помещения и т.д." rows="3" required
+                          style="width: 100%; padding: 15px 18px; border: 2px solid #e0e0e0; border-radius: 8px; font-size: 1rem; transition: all 0.3s; font-family: inherit; resize: vertical; box-sizing: border-box;"></textarea>
+            </div>
+            
+            <div class="form-group" style="width: 100%;">
+                <label for="orderAddress" style="font-weight: 600; margin-bottom: 8px; display: block; color: #333;">Адрес объекта <span style="color: #ff0000;">*</span></label>
+                <textarea id="orderAddress" name="address" placeholder="Введите адрес: город, улица, дом, квартира" required rows="3"
+                          style="width: 100%; padding: 15px 18px; border: 2px solid #e0e0e0; border-radius: 8px; font-size: 1rem; transition: all 0.3s; font-family: inherit; resize: vertical; box-sizing: border-box;"></textarea>
+            </div>
+            
+            <!-- ЧЕКБОКС С ПАМЯТКОЙ -->
+            <div style="margin: 15px 0; padding: 20px; background-color: #0c8346; border-radius: 8px;">
+                <label style="display: flex; align-items: flex-start; gap: 15px; cursor: pointer; color: #ffffff;">
+                    <input type="checkbox" name="clientMemoAgreement" id="clientMemoAgreement" required 
+                           style="width: 20px; height: 20px; margin-top: 2px; cursor: pointer; accent-color: #ff9800; flex-shrink: 0;">
+                    <span style="color: #ffffff; font-size: 1rem; line-height: 1.4; flex: 1;">
+                        Я ознакомлен(а) и согласен(на) с <a href="client-memo.html" target="_blank" style="color: #ff9800; text-decoration: underline; font-weight: 600;">Памяткой клиенту</a> и обязуюсь соблюдать все правила поведения после обработки
+                    </span>
+                </label>
+            </div>
+            
+            <button type="submit" class="btn btn--primary btn--block" id="orderSubmitBtn" disabled style="padding: 16px; font-size: 1.2rem; font-weight: 700; background: #0c8346; color: white; border: none; border-radius: 8px; cursor: pointer; transition: all 0.3s; margin-top: 10px;">
+                <i class="fas fa-phone-alt"></i> Вызвать специалиста
+            </button>
+            
+            <p class="form-note" style="font-size: 0.9rem; color: #5a6268; text-align: center; margin-top: 15px;">
+                Нажимая кнопку, вы соглашаетесь с
+                <button type="button" class="consent-link" data-modal="consent" style="background: none; border: none; color: #0c8346; text-decoration: underline; cursor: pointer; padding: 0; font-size: 0.9rem;">обработкой персональных данных</button>
+            </p>
+        </form>
     </div>
+</div>
 
     <!-- Модальное окно для юридических лиц -->
     <div class="modal" id="orgConsultModal">
@@ -1229,3 +1229,4 @@
 
 
 </html>
+
